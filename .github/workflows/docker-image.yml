@@ -33,8 +33,9 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag eexperts:latest
-      run: docker push bhadoria/eexperts:latest
+      run: |
+         docker build . --file Dockerfile --tag eexperts:latest
+         docker push bhadoria/eexperts:latest
       
 
 
