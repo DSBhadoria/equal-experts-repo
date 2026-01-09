@@ -22,6 +22,9 @@ jobs:
        
     - name: Run the Maven verify phase
       run: mvn --batch-mode --update-snapshots verify
+
+    - name: Build and run tests with Maven
+      run: mvn test --batch-mode --file pom.xml
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag eexperts:latest
